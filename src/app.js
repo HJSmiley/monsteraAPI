@@ -2,14 +2,19 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
-// 미들웨어 설정
-app.use(
-  cors({
-    origin: "https://monsteratech.com",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true,
-  })
-);
+// CORS 설정
+// app.use(
+//   cors({
+//     origin: "https://monsteratech.com",
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     credentials: true,
+//   })
+// );
+
+// (개발 환경에서만 CORS 설정
+app.use(cors("*"));
+
+// 그 외 미들웨어 설정
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
