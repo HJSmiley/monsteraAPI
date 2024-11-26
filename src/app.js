@@ -11,7 +11,7 @@ const app = express();
 //   })
 // );
 
-// (개발 환경에서만 CORS 설정
+// (개발 환경에서만) CORS 설정
 app.use(cors("*"));
 
 // 그 외 미들웨어 설정
