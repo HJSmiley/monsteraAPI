@@ -1,6 +1,9 @@
+require("dotenv").config();
+
 const { sendEmail } = require("../utils/emailService");
 
-const APPROVED_EMAILS = ["pepsikang98@gmail.com", "hyeju518@gmail.com"];
+const APPROVED_EMAILS = JSON.parse(process.env.APPROVED_EMAILS || "[]");
+
 const verificationCodes = {};
 
 exports.sendVerificationCode = (req, res) => {
